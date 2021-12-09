@@ -1,0 +1,3 @@
+[submodule "golang_dev_init"]
+	path = golang_dev_init
+	url = git@e.coding.net:mandrillvr/sakurasawa_sumi/golang_dev_init.git

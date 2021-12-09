@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package dbrpc;
+
+service DBRPC {
+	rpc GetUserInfo (UserInfoReq) returns (UserInfoRes) {}
+	rpc GetCompUserInfo (CompUserInfoReq) returns (CompUserInfoRes) {}
+	rpc GameOver(GameOverReq) returns (GameOverRes) {}
+	rpc BattleDailyTask(BattleDailyTaskReq) returns (BattleDailyTaskRes) {}
+}
+
+message UserInfo{
+	uint32 ID = 1;
+	uint64 coin = 2;
+	uint64 diamond = 3;
+	uint32 winCount = 4;
+	uint32 allCount = 5;
+	string avatar = 6;
+	string nick = 7;
+	uint32 cup = 8;
+	string SK = 9;
+	uint32 VK = 10;
+	uint32 exp = 11;
+	int32 gender = 12;
+}
+
+message CompUserInfo{
+	uint32 level = 1;
+	uint32 maxLevel = 2;
+	uint32 winCount = 3;
+	uint32 allCount = 4;
+}
+
+message UserInfoReq{
+	uint32 ID = 1;
+}
+
+message UserInfoRes{
+	uint32 code = 1;
+	string msg = 2;
+	UserInfo info = 3;
+}
+
+message CompUserInfoReq{
+	uint32 ID = 1;
+}
+
+message CompUserInfoRes{
+	uint32 code = 1;
+	string msg = 2;
+	CompUserInfo info = 3;
+}
+
+
+message GameOverReq{
+	uint32 ID = 1;
+	uint32 otherID = 2;
+	uint32 winNum = 3;
+	uint32 otherWinNum = 4;
+	uint32 type = 5;
+	uint32 cup = 6;
+	uint32 exp = 7;
+	uint32 level = 8;
+	uint64 coin = 9;
+	uint64 diamond = 10;
+	uint32 heroID = 11;
+	uint32 otherHeroID = 12;
+	uint32 currentLevel = 13;
+}
+
+message GameOverRes{
+	uint32 code = 1;
+	string msg = 2;
+	uint32 status = 3;
+	uint32 rewardID = 4;
+}
+
+message BattleDailyTaskReq{
+	uint32 ID = 1;
+	uint32 winNum = 2;
+	uint32 otherWinNum = 3;
+	uint32 type = 4;
+	uint32 hitHead = 5;
+	string sk = 6;
+	uint32 vk = 7;
+}
+
+message BattleDailyTaskRes{
+	uint32 code = 1;
+	string msg = 2;
+}

@@ -1,0 +1,8 @@
+protoc v3.11.4
+protoc-gen-go v1.3.2
+grpc v1.26.0
+
+protoc --go_out=./ hello.proto
+protoc --go_out=./ --go_out=plugins=grpc:. hello.proto
+
+

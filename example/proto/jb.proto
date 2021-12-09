@@ -1,0 +1,118 @@
+syntax="proto3";
+
+package proto;
+
+message MoveUp {
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message MoveDown {
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message MoveDownOver {
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message MoveLeft {
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message MoveLeftOver {
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message MoveRight {
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message MoveRightOver {
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message Fall {
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message Die {
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message Idle{
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message Bounce{
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message Props{
+    int32 ID = 1;
+    string Tag = 2;
+    string Name = 3;
+}
+
+message FootBoard{
+    int32 ID = 1;
+    string Tag = 2;
+    string Name = 3;
+}
+
+message Action {
+    int32 ID = 1;
+    string J = 2;
+    string K = 3;
+}
+
+message Hit {
+    int32 ID = 1;
+    string attacker = 2;
+    string Victim = 3;
+    string AttackType = 4; 
+}
+
+message PlayerInfo {
+    int32 ID = 1;
+    float PositionX = 2;
+    float PositionY = 3;
+}
+
+message Frame {
+    int32 ID = 1;
+    repeated int32 cmd = 2;
+}
+
+message SyncGear {
+    int32 ID = 1;
+}
+
+message JoinRoom {
+	int32 RoomID = 1;
+	int32 UserID = 2;		
+}
+
+message JoinRoomRes {
+	int64 Seed = 1;
+}
